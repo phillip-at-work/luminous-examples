@@ -7,7 +7,7 @@ from luminous.src.source.source import Isotropic
 
 scene = Scene(log_level=10, log_file="./results/luminous.log")
 
-scene.attach_ray_debugger()
+scene.attach_ray_debugger(path="./results", filename="debug_ray_trace")
 
 scene += Isotropic(position=Vector(5, 5, -10), pointing_direction=Vector(0, 0, 1))
 scene += Imager(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
