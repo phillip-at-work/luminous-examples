@@ -3,6 +3,8 @@ from luminous.src.scene.scene import Scene, Sphere, CheckeredSphere
 from luminous.src.detector.detector import Imager
 from luminous.src.source.source import Isotropic
 
+from matplotlib import pyplot as plt
+
 
 iterations = 100
 t = 0
@@ -24,4 +26,10 @@ for i in range(iterations):
     t += scene.elaspsed_time()
 
 
-print(f"runtime: {t/iterations}") # 0.0522s
+print(f"runtime: {t/iterations}") # 0.0322s
+
+plt.imshow(image)
+p = "./results/timed_sample_example.png"
+print(f"timed_sample example plot saved to: {p}")
+plt.savefig(p)
+plt.close()
