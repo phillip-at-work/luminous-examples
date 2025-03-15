@@ -23,7 +23,7 @@ for i in range(iterations):
     scene += Sphere(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(1, 0.572, 0.184))
     scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), reflectance=0.25)
 
-    rays = scene.raytrace()
+    scene.raytrace()
     image = camera.view_data()
     t += scene.elaspsed_time()
 
