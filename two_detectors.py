@@ -1,5 +1,6 @@
 from luminous.src.math.vector import Vector
-from luminous.src.scene.scene import Scene, Sphere, CheckeredSphere
+from luminous.src.scene.scene import Scene
+from luminous.src.element.element import Sphere, CheckeredSphere
 from luminous.src.detector.detector import Camera
 from luminous.src.source.source import Isotropic
 

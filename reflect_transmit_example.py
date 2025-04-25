@@ -1,0 +1,28 @@
+from luminous.src.math.vector import Vector
+from luminous.src.scene.scene import Scene
+from luminous.src.element.element import Sphere
+from luminous.src.detector.detector import Camera
+from luminous.src.source.source import Isotropic
+
+from matplotlib import pyplot as plt
+
+scene = Scene()
+scene.attach_ray_debugger()
+
+scene += Isotropic(position=Vector(0, 5, 3), pointing_direction=Vector(0, -1, 1))
+
+camera = Camera(width=100, height=100, position=Vector(0, 1, 0), pointing_direction=Vector(0, 0, 1))
+scene += camera
+
+scene += Sphere(center=Vector(0, 0, 3), radius=1, color=Vector(0, 0, 0), reflectance=0.1, transmittance=0.9, refractive_index=1.5)
+scene += Sphere(center=Vector(1, 0, 6), radius=1, color=Vector(1, 0, 0), reflectance=0.5, transmittance=0.0, refractive_index=1.0)
+
+scene.raytrace()
+
+image = camera.view_data()
+
+plt.imshow(image)
+p = "./results/translucent_sphere_example.png"
+print(f"Translucent Sphere example plot saved to: {p}")
+plt.savefig(p)
+plt.close()
