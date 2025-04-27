@@ -22,7 +22,7 @@ scene.raytrace()
 image = camera.view_data()
 
 plt.imshow(image)
-p = "./results/translucent_sphere_example.png"
-print(f"Translucent Sphere example plot saved to: {p}")
+p = "./results/refraction_example.png"
+print(f"Refraction example plot saved to: {p}")
 plt.savefig(p)
 plt.close()
