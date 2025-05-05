@@ -20,7 +20,7 @@ scene += camera_two
 scene += Sphere(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0))
 scene += Sphere(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0, 1, 0))
 scene += Sphere(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(0, 0, 1))
-scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), reflectance=0.25)
+scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), specularity=0.25)
 
 scene.raytrace()
 
