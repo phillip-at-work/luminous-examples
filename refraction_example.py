@@ -14,8 +14,8 @@ scene += Isotropic(position=Vector(0, 6, 1), pointing_direction=Vector(0, -1, 1)
 camera = Camera(width=100, height=100, position=Vector(0, 1, 0), pointing_direction=Vector(0, 0, 1))
 scene += camera
 
-scene += Sphere(center=Vector(0, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
-scene += Sphere(center=Vector(1, 0, 6), radius=1, color=Vector(1, 0, 0), refractive_index=1.0, user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(0, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(1, 0, 6), radius=1, color=Vector(1, 0, 0), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 

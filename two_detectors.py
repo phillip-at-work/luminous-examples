@@ -17,10 +17,10 @@ scene += camera_one
 camera_two = Camera(width=400, height=300, position=Vector(0, 2, -1), pointing_direction=Vector(0, 3, 1))
 scene += camera_two
 
-scene += Sphere(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0), user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
-scene += Sphere(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0, 1, 0), user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
-scene += Sphere(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(0, 0, 1), user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
-scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'diffuse': Vector(1,1,1), 'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0), user_params={'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0, 1, 0), user_params={'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 
