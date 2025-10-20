@@ -10,3 +10,7 @@ for script in *.py; do
 done
 
 echo "All tests completed successfully."
+
+# Run the reference compilation script
+echo "Compiling references..."
+python luminous/src/utilities/compile_references.py || { echo "Reference compilation failed"; exit 1; }
