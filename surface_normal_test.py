@@ -18,7 +18,7 @@ scene += camera
 scene += Sphere(center=Vector(0, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
 scene += Sphere(center=Vector(-3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
 scene += Sphere(center=Vector(3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-scene += Sphere(center=Vector(0, 3, 3), radius=0.6, color=Vector(0, 0, 1), transparent=True, user_params={'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(0, 3, 3), radius=0.6, color=Vector(0, 0, 1), transparent=True, user_params={'specular':0.25, 'n_s':10, 'absorption_color':Vector(0.01, 0.01, 0.01)})
 
 scene.raytrace()
 
