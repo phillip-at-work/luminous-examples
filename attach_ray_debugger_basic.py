@@ -16,7 +16,7 @@ camera = Camera(width=75, height=75, position=Vector(0, 0.35, -1), pointing_dire
 scene += camera
 
 scene += Sphere(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-# scene += Sphere(center=Vector(0, 0, 3.5), radius=0.6, color=Vector(1, 0.572, 0.184))
+# scene += Sphere(center=Vector(0, 0, 3.5), radius=0.6, color=Vector(1, 0.572, 0.184), user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 
