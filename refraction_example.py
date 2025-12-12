@@ -6,7 +6,7 @@ from luminous.src.source.source import Isotropic
 
 from matplotlib import pyplot as plt
 
-scene = Scene()
+scene = Scene(log_level=10, log_file="./results/luminous.log")
 # scene.attach_ray_debugger()
 
 scene += Isotropic(position=Vector(0, 6, 1), pointing_direction=Vector(0, -1, 1))

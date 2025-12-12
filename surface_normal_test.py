@@ -6,7 +6,7 @@ from luminous.src.element.element import Sphere
 from luminous.src.detector.detector import Camera
 from luminous.src.source.source import Isotropic
 
-scene = Scene(log_level=10, log_file="./results/luminous.log")
+scene = Scene()
 
 # scene.attach_ray_debugger(path="./results", filename="debug_ray_trace")
 
