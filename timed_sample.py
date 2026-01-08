@@ -14,7 +14,7 @@ for i in range(iterations):
 
     scene = Scene()
 
-    scene += Isotropic(position=Vector(5, 5, -10), pointing_direction=Vector(0, 0, 1))
+    scene += Isotropic(position=Vector(5, 5, -10), color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
     
     camera = Camera(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
     scene += camera

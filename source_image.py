@@ -1,0 +1,28 @@
+from luminous.src.math.vector import Vector
+from luminous.src.scene.scene import Scene
+from luminous.src.element.element import Sphere
+from luminous.src.detector.detector import Camera
+from luminous.src.source.source import Isotropic
+
+from matplotlib import pyplot as plt
+
+scene = Scene(log_level=10, log_file="./results/luminous.log")
+# scene.attach_ray_debugger()
+
+scene += Isotropic(position=Vector(0.5, 1.5, 10), color=Vector(1,0,0), pointing_direction=Vector(0, -1, 1))
+
+camera = Camera(width=1000, height=1000, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1))
+scene += camera
+
+scene += Sphere(center=Vector(-1, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
+scene += Sphere(center=Vector(0, 0, 6), radius=1, color=Vector(1, 0, 0), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
+
+scene.raytrace()
+
+image = camera.view_data()
+
+plt.imshow(image)
+p = "./results/source_image.png"
+print(f"Source-image example plot saved to: {p}. runtime: {scene.elaspsed_time():.3f}. pixels: {camera.width * camera.height}")
+plt.savefig(p)
+plt.close()
