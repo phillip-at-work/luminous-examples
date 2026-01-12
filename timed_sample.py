@@ -1,8 +1,7 @@
 from luminous.src.math.vector import Vector
 from luminous.src.scene.scene import Scene
-from luminous.src.element.element import Sphere, CheckeredSphere
+from luminous.src.element.element import SphereElement, CheckeredSphereElement, IsotropicSource
 from luminous.src.detector.detector import Camera
-from luminous.src.source.source import Isotropic
 
 from matplotlib import pyplot as plt
 
@@ -14,15 +13,15 @@ for i in range(iterations):
 
     scene = Scene()
 
-    scene += Isotropic(position=Vector(5, 5, -10), color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
+    scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
     
     camera = Camera(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
     scene += camera
 
-    scene += Sphere(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-    scene += Sphere(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0.5, 0.223, 0.5), user_params={'specular':0.25, 'n_s':30})
-    scene += Sphere(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(1, 0.572, 0.184), user_params={'specular':1, 'n_s':10})
-    scene += CheckeredSphere(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'specular':0.01, 'n_s':5})
+    scene += SphereElement(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+    scene += SphereElement(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0.5, 0.223, 0.5), user_params={'specular':0.25, 'n_s':30})
+    scene += SphereElement(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(1, 0.572, 0.184), user_params={'specular':1, 'n_s':10})
+    scene += CheckeredSphereElement(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'specular':0.01, 'n_s':5})
 
     scene.raytrace()
     image = camera.view_data()
