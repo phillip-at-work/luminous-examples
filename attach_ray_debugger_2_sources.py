@@ -12,7 +12,7 @@ scene.attach_ray_debugger(path="./results", filename="debug_ray_trace")
 scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
 scene += IsotropicSource(center=Vector(0, -5, -2), radius=0.05, color=Vector(0,0,1), pointing_direction=Vector(0, 0, 1))
 
-camera = Camera(width=200, height=150, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
+camera = Camera(width=75, height=75, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
 scene += camera
 
 scene += SphereElement(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})

@@ -14,7 +14,7 @@ camera = Camera(width=100, height=100, position=Vector(0, 0, 0), pointing_direct
 scene += camera
 
 scene += SphereElement(center=Vector(-1, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(0, 0, 6), radius=1, color=Vector(1, 0, 0), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(center=Vector(0, 0, 6), radius=1, color=Vector(0, 0, 1), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 
