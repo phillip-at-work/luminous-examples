@@ -11,7 +11,7 @@ scene = Scene()
 
 scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
 
-camera = Camera(width=75, height=75, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1))
+camera = Camera(width=75, height=75, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera
 
 scene += SphereElement(center=Vector(0, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})

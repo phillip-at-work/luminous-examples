@@ -11,10 +11,10 @@ scene = Scene()
 
 scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
 
-camera_one = Camera(width=40, height=30, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1))
+camera_one = Camera(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera_one
 
-camera_two = Camera(width=40, height=30, position=Vector(0, 2, -1), pointing_direction=Vector(0, 3, 1))
+camera_two = Camera(width=400, height=300, position=Vector(0, 2, -1), pointing_direction=Vector(0, 3, 1), screen_width=2, screen_height=None)
 scene += camera_two
 
 scene += SphereElement(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0), user_params={'specular':0.25, 'n_s':10})

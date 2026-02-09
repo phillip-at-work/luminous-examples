@@ -5,13 +5,13 @@ from luminous.src.detector.detector import Camera
 
 from matplotlib import pyplot as plt
 
-scene = Scene()
+scene = Scene(log_level=10, log_file="./results/luminous.log")
 scene.attach_ray_debugger()
 
 src = IsotropicSource(center=Vector(0, 6, 1), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, -1, 1))
 scene += src
 
-camera = Camera(width=50, height=50, position=Vector(0, 1, 0), pointing_direction=Vector(0, 0, 1))
+camera = Camera(width=75, height=75, position=Vector(0, 1, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera
 
 scene += SphereElement(center=Vector(0, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
