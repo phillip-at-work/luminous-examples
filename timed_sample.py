@@ -1,7 +1,8 @@
 from luminous.src.math.vector import Vector
 from luminous.src.scene.scene import Scene
-from luminous.src.element.element import SphereElement, CheckeredSphereElement, IsotropicSource
-from luminous.src.detector.detector import Camera
+from luminous.src.element.element import SphereElement, CheckeredSphereElement
+from luminous.src.element.source import IsotropicSource
+from luminous.src.element.detector import Camera
 
 from matplotlib import pyplot as plt
 

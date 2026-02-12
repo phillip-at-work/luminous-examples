@@ -2,8 +2,9 @@ from matplotlib import pyplot as plt
 
 from luminous.src.math.vector import Vector
 from luminous.src.scene.scene import Scene
-from luminous.src.element.element import SphereElement, IsotropicSource
-from luminous.src.detector.detector import Camera
+from luminous.src.element.element import SphereElement
+from luminous.src.element.source import IsotropicSource
+from luminous.src.element.detector import Camera
 
 scene = Scene()
 
