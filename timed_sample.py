@@ -14,7 +14,7 @@ for i in range(iterations):
 
     scene = Scene()
 
-    scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
+    scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
     
     camera = Camera(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
     scene += camera

@@ -10,8 +10,8 @@ scene = Scene()
 
 # scene.attach_ray_debugger(path="./results", filename="debug_ray_trace")
 
-scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, 0, 1))
-scene += IsotropicSource(center=Vector(0, -5, -2), radius=0.05, color=Vector(0,0,1), pointing_direction=Vector(0, 0, 1))
+scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
+scene += IsotropicSource(center=Vector(0, -5, -2), radius=0.05, color=Vector(0,0,1))
 
 camera = Camera(width=100, height=100, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera

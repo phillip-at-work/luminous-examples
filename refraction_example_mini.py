@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 scene = Scene(log_level=10, log_file="./results/luminous.log", standoff_distance=1e-8)
 # scene.attach_ray_debugger()
 
-src = IsotropicSource(center=Vector(0, 6, 1), radius=0.05, color=Vector(1,0,0), pointing_direction=Vector(0, -1, 1))
+src = IsotropicSource(center=Vector(0, 6, 1), radius=0.05, color=Vector(1,0,0))
 scene += src
 
 camera = Camera(width=500, height=500, position=Vector(0, 1, 0), pointing_direction=Vector(0, 0, 1), screen_width=1e-6, screen_height=1e-6)
