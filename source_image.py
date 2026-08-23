@@ -7,7 +7,7 @@ from luminous.src.element.detector import Camera
 from matplotlib import pyplot as plt
 
 scene = Scene(log_level=10, log_file="./results/luminous.log")
-scene.attach_ray_debugger()
+# scene.attach_ray_debugger()
 
 scene += IsotropicSource(center=Vector(0.5, 1.5, 10), radius=0.05, color=Vector(1,0,0))
 
