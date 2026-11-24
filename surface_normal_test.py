@@ -10,15 +10,15 @@ scene = Scene()
 
 # scene.attach_ray_debugger(path="./results", filename="debug_ray_trace")
 
-scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
+scene += IsotropicSource(node_id="LAMP", center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
 
-camera = Camera(width=75, height=75, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
+camera = Camera(node_id="CAMERA", width=75, height=75, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera
 
-scene += SphereElement(center=Vector(0, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(-3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(0, 3, 3), radius=0.6, color=Vector(0, 0, 1), transparent=True, user_params={'specular':0.25, 'n_s':10, 'absorption_color':Vector(0.01, 0.01, 0.01)})
+scene += SphereElement(node_id="SPHERE_1", center=Vector(0, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="SPHERE_2", center=Vector(-3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="SPHERE_3", center=Vector(3, 0, 3), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="GLASS", center=Vector(0, 3, 3), radius=0.6, color=Vector(0, 0, 1), transparent=True, user_params={'specular':0.25, 'n_s':10, 'absorption_color':Vector(0.01, 0.01, 0.01)})
 
 scene.raytrace()
 

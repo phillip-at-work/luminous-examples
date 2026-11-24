@@ -10,18 +10,18 @@ from matplotlib import pyplot as plt
 scene = Scene()
 # scene.attach_ray_debugger()
 
-scene += IsotropicSource(center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
+scene += IsotropicSource(node_id="LAMP", center=Vector(5, 5, -10), radius=0.05, color=Vector(1,0,0))
 
-camera_one = Camera(width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
+camera_one = Camera(node_id="CAMERA_1", width=400, height=300, position=Vector(0, 0.35, -1), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera_one
 
-camera_two = Camera(width=400, height=300, position=Vector(0, 2, -1), pointing_direction=Vector(0, 3, 1), screen_width=2, screen_height=None)
+camera_two = Camera(node_id="CAMERA_2", width=400, height=300, position=Vector(0, 2, -1), pointing_direction=Vector(0, 3, 1), screen_width=2, screen_height=None)
 scene += camera_two
 
-scene += SphereElement(center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0), user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0, 1, 0), user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
-scene += CheckeredSphereElement(center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="SPHERE_1", center=Vector(0.75, 0.1, 1), radius=0.6, color=Vector(1, 0, 0), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="SPHERE_2", center=Vector(-0.75, 0.1, 2.25), radius=0.6, color=Vector(0, 1, 0), user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="SPHERE_3", center=Vector(-2.75, 0.1, 3.5), radius=0.6, color=Vector(0, 0, 1), user_params={'specular':0.25, 'n_s':10})
+scene += CheckeredSphereElement(node_id="GROUND", center=Vector(0, -99999.5, 0), radius=99999, color=Vector(0.75, 0.75, 0.75), user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 

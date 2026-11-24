@@ -9,13 +9,13 @@ from matplotlib import pyplot as plt
 scene = Scene(log_level=10, log_file="./results/luminous.log")
 scene.attach_ray_debugger()
 
-scene += IsotropicSource(center=Vector(0.5, 1.5, 10), radius=0.05, color=Vector(1,0,0))
+scene += IsotropicSource(node_id="SUN", center=Vector(0.5, 1.5, 10), radius=0.05, color=Vector(1,0,0))
 
-camera = Camera(width=100, height=100, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
+camera = Camera(node_id="CAMERA", width=100, height=100, position=Vector(0, 0, 0), pointing_direction=Vector(0, 0, 1), screen_width=2, screen_height=None)
 scene += camera
 
-scene += SphereElement(center=Vector(-1, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
-scene += SphereElement(center=Vector(0, 0, 6), radius=1, color=Vector(0, 0, 1), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="GLASS_1", center=Vector(-1, 0, 3), radius=1, color=Vector(0, 0.2, 0), refractive_index=1.5, transparent=True, user_params={'specular':0.25, 'n_s':10})
+scene += SphereElement(node_id="GLASS_2", center=Vector(0, 0, 6), radius=1, color=Vector(0, 0, 1), refractive_index=1.0, user_params={'specular':0.25, 'n_s':10})
 
 scene.raytrace()
 
